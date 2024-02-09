@@ -1,0 +1,17 @@
+[package]
+name = "spore-warriors-wasm"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+molecule = "0.7.5"
+wasm-bindgen = "0.2.90"
+rand = { version = "0.8.5", default-features = false, features = ["small_rng"] }
+
+spore-warriors-core = { git = "https://github.com/btckoguebike/spore-warriors-contract", features = ["debug"]}
+spore-warriors-generated = { git = "https://github.com/btckoguebike/spore-warriors-contract" }
