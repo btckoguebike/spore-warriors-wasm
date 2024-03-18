@@ -16,3 +16,4 @@ rand = { version = "0.8.5", default-features = false, features = ["small_rng"] }
 lazy_static = "1.4.0"
 
 spore-warriors-core = { git = "https://github.com/btckoguebike/spore-warriors-contract", branch = "master", features = ["debug", "json_serde"]}
+spore-warriors-resources = { git = "https://github.com/btckoguebike/spore-warriors-resources", branch = "master"}

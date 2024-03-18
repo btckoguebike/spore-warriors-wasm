@@ -1,3 +1,5 @@
+use std::sync::Mutex;
+
 use lazy_static::lazy_static;
 use serde_wasm_bindgen::Error;
 use spore_warriors_core::battle::pve::MapBattlePVE;
@@ -6,7 +8,7 @@ use spore_warriors_core::contexts::{WarriorContext, WarriorDeckContext};
 use spore_warriors_core::game::Game;
 use spore_warriors_core::map::MoveResult;
 use spore_warriors_core::wrappings::{Enemy, Point};
-use std::sync::Mutex;
+use spore_warriors_resources::parse_to_binary;
 use wasm_bindgen::prelude::*;
 
 lazy_static! {
@@ -267,4 +269,26 @@ pub fn create_standalone_battle(
         .map_err::<Error, _>(|e| error!(&e.to_string()))?;
     *global_battle = Some(battle);
     Ok(WasmBattle::default())
+}
+
+#[wasm_bindgen]
+pub fn generate_resource_binary(
+    action_pool: String,
+    card_pool: String,
+    system_pool: String,
+    enemy_pool: String,
+    loot_pool: String,
+    scene_pool: String,
+    warrior_pool: String,
+) -> Result<Vec<u8>, Error> {
+    parse_to_binary(
+        &action_pool,
+        &card_pool,
+        &system_pool,
+        &enemy_pool,
+        &loot_pool,
+        &scene_pool,
+        &warrior_pool,
+    )
+    .map_err(|e| error!(&e.to_string()))
 }
