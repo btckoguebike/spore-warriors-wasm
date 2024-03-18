@@ -27,12 +27,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "51e2ce894d53b295cf97b05685aa077950ff3e8541af83217fc720a6437169f8"
 
 [[package]]
-name = "itoa"
-version = "1.0.10"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b1a46d1a171d865aa5f83f92695765caa047a9b4cbae2cbf37dbd613a793fd4c"
-
-[[package]]
 name = "js-sys"
 version = "0.3.69"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -132,12 +126,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3e75f6a532d0fd9f7f13144f392b6ad56a32696bfcd9c78f797f16bbb6f072d6"
 
 [[package]]
-name = "ryu"
-version = "1.0.17"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e86697c916019a8588c99b5fac3cead74ec0b4b819707a682fd4d23fa0ce1ba1"
-
-[[package]]
 name = "serde"
 version = "1.0.197"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -169,20 +157,9 @@ dependencies = [
 ]
 
 [[package]]
-name = "serde_json"
-version = "1.0.114"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c5f09b1bd632ef549eaa9f60a1f8de742bdbc698e6cee2095fc84dde5f549ae0"
-dependencies = [
- "itoa",
- "ryu",
- "serde",
-]
-
-[[package]]
 name = "spore-warriors-core"
 version = "0.1.0"
-source = "git+https://github.com/btckoguebike/spore-warriors-contract#989ed791ce54ff593c3a24e3039c4fc179fb7428"
+source = "git+https://github.com/btckoguebike/spore-warriors-contract?branch=master#eb77efb7fc6bb0e34fa5d58f978434124b37c939"
 dependencies = [
  "molecule",
  "rand",
@@ -195,7 +172,7 @@ dependencies = [
 [[package]]
 name = "spore-warriors-generated"
 version = "0.1.0"
-source = "git+https://github.com/btckoguebike/spore-warriors-contract#989ed791ce54ff593c3a24e3039c4fc179fb7428"
+source = "git+https://github.com/btckoguebike/spore-warriors-contract?branch=master#eb77efb7fc6bb0e34fa5d58f978434124b37c939"
 dependencies = [
  "molecule",
 ]
@@ -208,7 +185,6 @@ dependencies = [
  "molecule",
  "rand",
  "serde-wasm-bindgen",
- "serde_json",
  "spore-warriors-core",
  "wasm-bindgen",
 ]
